@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://see-future-website-ojyfz23zr-abubasheer004s-projects.vercel.app/sitemap.xml

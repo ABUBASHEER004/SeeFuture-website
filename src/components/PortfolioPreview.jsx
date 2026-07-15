@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
+
 const projects = [
   {
     title: "Corporate Business Website",
@@ -27,51 +30,78 @@ const projects = [
 
 function PortfolioPreview() {
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
 
+        {/* Heading */}
         <div className="text-center">
-          <p className="text-blue-600 font-semibold uppercase">
+
+          <p className="text-blue-600 font-semibold uppercase tracking-wider">
             Our Portfolio
           </p>
 
-          <h2 className="text-4xl font-bold mt-3 text-gray-900">
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
             Featured Projects
           </h2>
 
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          <p className="mt-6 max-w-3xl mx-auto text-gray-600 text-lg leading-8">
             Here are examples of the innovative technology solutions we build
             for businesses, schools, startups, and organizations.
           </p>
+
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mt-14">
+        {/* Projects */}
+        <div className="grid md:grid-cols-2 gap-8 mt-16">
+
           {projects.map((project) => (
             <div
               key={project.title}
-              className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+              className="bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition duration-300"
             >
-              <div className="h-48 bg-gradient-to-r from-blue-700 to-cyan-500 flex items-center justify-center">
-                <h3 className="text-white text-2xl font-bold text-center px-4">
+              {/* Banner */}
+              <div className="h-52 bg-gradient-to-r from-blue-700 to-cyan-500 flex items-center justify-center px-6">
+                <h3 className="text-white text-2xl font-bold text-center leading-tight">
                   {project.title}
                 </h3>
               </div>
 
+              {/* Content */}
               <div className="p-8">
-                <span className="text-sm font-semibold text-blue-600">
+
+                <span className="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1 rounded-full">
                   {project.category}
                 </span>
 
-                <p className="mt-4 text-gray-600">
+                <p className="mt-6 text-gray-600 leading-8">
                   {project.description}
                 </p>
 
-                <button className="mt-6 bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition">
+                <Link
+                  to="/portfolio"
+                  className="inline-flex items-center gap-2 mt-8 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition"
+                >
                   View Project
-                </button>
+                  <FaArrowRight />
+                </Link>
+
               </div>
+
             </div>
           ))}
+
+        </div>
+
+        {/* Bottom Button */}
+        <div className="text-center mt-16">
+
+          <Link
+            to="/portfolio"
+            className="inline-block bg-white border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white px-8 py-4 rounded-xl font-semibold transition"
+          >
+            View All Projects
+          </Link>
+
         </div>
 
       </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   FaGlobe,
   FaMobileAlt,
@@ -83,9 +84,12 @@ function ServicesPage() {
                   {service.description}
                 </p>
 
-                <button className="mt-6 bg-blue-700 text-white px-5 py-3 rounded-lg hover:bg-blue-800 transition">
-                  Learn More
-                </button>
+                <Link
+  to="/contact"
+  className="inline-flex items-center justify-center mt-6 bg-blue-700 text-white px-5 py-3 rounded-lg hover:bg-blue-800 transition duration-300"
+>
+  Learn More
+</Link>
               </div>
             ))}
           </div>
@@ -134,9 +138,12 @@ function ServicesPage() {
             or technology consulting, we're here to help.
           </p>
 
-          <button className="mt-8 bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition">
-            Contact Us Today
-          </button>
+         <Link
+  to="/contact"
+  className="inline-flex items-center justify-center mt-8 bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
+>
+  Contact Us Today
+</Link>
         </div>
       </section>
     </>

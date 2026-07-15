@@ -1,141 +1,169 @@
+import SEO from "../components/SEO";
 import {
-  FaEnvelope,
-  FaPhone,
-  FaMapMarkerAlt,
-  FaFacebook,
+  FaGlobe,
+  FaMobileAlt,
+  FaRobot,
+  FaShieldAlt,
+  FaCloud,
+  FaArrowRight,
 } from "react-icons/fa";
 
-function Contact() {
+const projects = [
+  {
+    title: "Business Website Development",
+    icon: <FaGlobe className="text-5xl text-blue-600" />,
+    description:
+      "Modern, responsive websites designed to help businesses establish a strong online presence and attract more customers.",
+    technologies: ["React", "Vite", "Tailwind CSS"],
+  },
+  {
+    title: "Mobile App Development",
+    icon: <FaMobileAlt className="text-5xl text-blue-600" />,
+    description:
+      "High-performance Android and iOS applications built with Flutter for startups and enterprises.",
+    technologies: ["Flutter", "Firebase", "Dart"],
+  },
+  {
+    title: "Artificial Intelligence Solutions",
+    icon: <FaRobot className="text-5xl text-blue-600" />,
+    description:
+      "AI-powered applications that automate workflows, improve decision-making, and enhance customer experiences.",
+    technologies: ["Python", "Machine Learning", "OpenAI"],
+  },
+  {
+    title: "Cybersecurity Services",
+    icon: <FaShieldAlt className="text-5xl text-blue-600" />,
+    description:
+      "Protecting organizations through security assessments, vulnerability testing, and cybersecurity best practices.",
+    technologies: ["Network Security", "Ethical Hacking", "Risk Assessment"],
+  },
+  {
+    title: "Cloud Solutions",
+    icon: <FaCloud className="text-5xl text-blue-600" />,
+    description:
+      "Reliable cloud deployment, hosting, backup, and scalable infrastructure for businesses.",
+    technologies: ["AWS", "Azure", "Cloud Hosting"],
+  },
+  {
+    title: "Custom Software Development",
+    icon: <FaGlobe className="text-5xl text-blue-600" />,
+    description:
+      "Tailor-made software solutions that streamline operations and increase business productivity.",
+    technologies: ["React", "Node.js", "MongoDB"],
+  },
+];
+
+function Portfolio() {
   return (
     <>
+      <SEO
+        title="Portfolio | SeeFuture Tech Hub"
+        description="Explore technology projects completed by SeeFuture Tech Hub including websites, mobile applications, AI, cybersecurity, cloud solutions, and custom software."
+        keywords="Portfolio, SeeFuture Tech Hub, Web Development, Mobile Apps, Flutter, React, AI, Cybersecurity, Cloud Computing"
+      />
+
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-900 to-cyan-600 text-white py-24">
+      <section className="bg-gradient-to-r from-blue-900 via-blue-700 to-cyan-600 text-white py-24">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold">
-            Contact Us
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+            Our Portfolio
           </h1>
 
-          <p className="mt-6 text-lg text-blue-100">
-            We'd love to discuss your next project or answer any questions you
-            have.
+          <p className="mt-6 max-w-3xl mx-auto text-lg text-blue-100 leading-8">
+            We build innovative digital solutions that help businesses,
+            organizations, startups, and institutions grow through technology.
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
+      {/* Projects */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
 
-          {/* Contact Form */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-
-            <h2 className="text-3xl font-bold text-blue-700">
-              Send us a Message
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-blue-700 leading-tight">
+              Featured Projects
             </h2>
 
-            <form className="mt-8 space-y-5">
-
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="w-full border rounded-lg px-4 py-3"
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full border rounded-lg px-4 py-3"
-              />
-
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                className="w-full border rounded-lg px-4 py-3"
-              />
-
-              <input
-                type="text"
-                placeholder="Company / Organization"
-                className="w-full border rounded-lg px-4 py-3"
-              />
-
-              <textarea
-                rows="6"
-                placeholder="Tell us about your project..."
-                className="w-full border rounded-lg px-4 py-3"
-              ></textarea>
-
-              <button
-                type="submit"
-                className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-lg transition"
-              >
-                Send Message
-              </button>
-
-            </form>
-
+            <p className="mt-4 text-gray-600 max-w-2xl mx-auto leading-8">
+              Here are some of the technology solutions we design and deliver
+              for businesses and organizations.
+            </p>
           </div>
 
-          {/* Contact Information */}
-          <div>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-            <h2 className="text-3xl font-bold text-blue-700">
-              Contact Information
-            </h2>
-
-            <div className="mt-8 space-y-8">
-
-              <div className="flex gap-4">
-                <FaEnvelope className="text-blue-700 text-2xl mt-1" />
-
-                <div>
-                  <h3 className="font-bold">Email</h3>
-                  <p>seefuture004@gmail.com</p>
+            {projects.map((project) => (
+              <div
+                key={project.title}
+                className="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 hover:shadow-2xl transition duration-300"
+              >
+                <div className="mb-6">
+                  {project.icon}
                 </div>
-              </div>
 
-              <div className="flex gap-4">
-                <FaPhone className="text-blue-700 text-2xl mt-1" />
+                <h3 className="text-2xl font-bold text-gray-800 leading-tight">
+                  {project.title}
+                </h3>
 
-                <div>
-                  <h3 className="font-bold">Phone</h3>
-                  <p>+234 813 026 2575</p>
+                <p className="mt-5 text-gray-600 leading-8">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mt-6">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-blue-100 text-blue-700 text-sm px-3 py-1 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
+
+                <button className="mt-8 flex items-center gap-2 text-blue-700 font-semibold hover:text-blue-900 transition">
+                  Learn More
+                  <FaArrowRight />
+                </button>
               </div>
+            ))}
 
-              <div className="flex gap-4">
-                <FaMapMarkerAlt className="text-blue-700 text-2xl mt-1" />
+          </div>
+        </div>
+      </section>
 
-                <div>
-                  <h3 className="font-bold">Office</h3>
-                  <p>Kaduna, Nigeria</p>
-                </div>
-              </div>
+      {/* Statistics */}
+      <section className="bg-blue-700 text-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
 
-              <div className="flex gap-4">
-                <FaFacebook className="text-blue-700 text-2xl mt-1" />
+          <div className="grid gap-10 md:grid-cols-4 text-center">
 
-                <div>
-                  <h3 className="font-bold">Facebook</h3>
-                  <p>@Gida Serv</p>
-                </div>
-              </div>
-
+            <div>
+              <h3 className="text-5xl font-bold">50+</h3>
+              <p className="mt-4 text-blue-100 text-lg">
+                Projects Delivered
+              </p>
             </div>
 
-            {/* Office Hours */}
-            <div className="mt-12 bg-white rounded-xl shadow-lg p-8">
+            <div>
+              <h3 className="text-5xl font-bold">25+</h3>
+              <p className="mt-4 text-blue-100 text-lg">
+                Happy Clients
+              </p>
+            </div>
 
-              <h3 className="text-2xl font-bold text-blue-700">
-                Office Hours
-              </h3>
+            <div>
+              <h3 className="text-5xl font-bold">10+</h3>
+              <p className="mt-4 text-blue-100 text-lg">
+                Technology Services
+              </p>
+            </div>
 
-              <div className="mt-6 space-y-2">
-                <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
-                <p>Saturday: 9:00 AM – 2:00 PM</p>
-                <p>Sunday: Closed</p>
-              </div>
-
+            <div>
+              <h3 className="text-5xl font-bold">100%</h3>
+              <p className="mt-4 text-blue-100 text-lg">
+                Client Satisfaction
+              </p>
             </div>
 
           </div>
@@ -143,25 +171,26 @@ function Contact() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* CTA */}
+      <section className="py-24">
+        <div className="max-w-5xl mx-auto px-6 text-center">
 
-          <h2 className="text-4xl font-bold text-center text-blue-700">
-            Our Location
+          <h2 className="text-4xl font-bold text-blue-700 leading-tight">
+            Ready to Build Your Next Project?
           </h2>
 
-          <div className="mt-10 h-96 rounded-2xl overflow-hidden shadow-lg">
-            <iframe
-              title="SeeFuture Tech Hub Location"
-              src="https://www.google.com/maps?q=Kaduna,Nigeria&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              loading="lazy"
-              allowFullScreen
-            ></iframe>
-          </div>
+          <p className="mt-6 text-gray-600 text-lg leading-8">
+            Whether you need a professional website, mobile application,
+            cybersecurity solution, AI system, or cloud infrastructure,
+            SeeFuture Tech Hub is ready to help.
+          </p>
+
+          <a
+            href="/contact"
+            className="inline-block mt-10 bg-blue-700 hover:bg-blue-800 text-white px-10 py-4 rounded-xl font-semibold transition"
+          >
+            Start Your Project
+          </a>
 
         </div>
       </section>
@@ -169,4 +198,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Portfolio;

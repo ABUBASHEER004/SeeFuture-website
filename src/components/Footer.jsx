@@ -28,7 +28,7 @@ function Footer() {
             SeeFuture Tech Hub
           </h2>
 
-          <p className="mt-5 leading-7">
+          <p className="mt-6 text-lg leading-8 text-gray-600">
             Empowering businesses and individuals through innovative technology,
             software development, cybersecurity, AI, cloud solutions and digital
             transformation.
@@ -83,6 +83,11 @@ function Footer() {
             <li>Tech Training</li>
 
           </ul>
+         <p className="mt-6 text-lg leading-8 text-gray-600">
+  Registered with the Corporate Affairs Commission (CAC), Nigeria
+  <br />
+  Registration No. 9680560
+</p>
 
         </div>
 
@@ -112,14 +117,15 @@ function Footer() {
 
             <div className="flex items-center gap-3 mt-5">
 
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noreferrer"
-                className="text-2xl hover:text-cyan-400"
-              >
-                <FaFacebook />
-              </a>
+             <a
+  href="https://www.facebook.com/GidaServ"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 hover:text-cyan-400 transition-colors duration-300"
+>
+  <FaFacebook className="text-2xl" />
+  <span>Gida Serv</span>
+</a>
 
             </div>
 

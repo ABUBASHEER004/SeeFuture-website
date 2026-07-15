@@ -5,27 +5,31 @@ import {
   FaLaptopCode,
   FaShieldAlt,
   FaRobot,
+  FaArrowRight,
 } from "react-icons/fa";
 
 function Hero() {
   return (
     <>
+      {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-500 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
 
-          {/* Left Content */}
+          {/* Left */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="lg:w-1/2 text-center lg:text-left"
+            className="lg:w-1/2 text-center"
           >
-            <span className="inline-flex items-center gap-2 bg-white/20 px-5 py-2 rounded-full text-sm font-medium mb-6">
-              <FaCheckCircle />
+            {/* Badge */}
+            <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-sm font-semibold mb-8">
+              <FaCheckCircle className="text-cyan-300" />
               Welcome to SeeFuture Tech Hub
             </span>
 
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
+            {/* Heading */}
+            <h1 className="text-5xl md:text-6xl xl:text-7xl font-extrabold leading-tight">
               Technology That{" "}
               <span className="text-cyan-300">
                 Transforms Ideas
@@ -33,51 +37,70 @@ function Hero() {
               Into Reality
             </h1>
 
-            <p className="mt-8 text-lg md:text-xl text-blue-100 leading-8 max-w-xl mx-auto lg:mx-0">
-              We build modern websites, mobile applications, cybersecurity
-              solutions, artificial intelligence systems, cloud platforms,
-              and digital products that help businesses grow confidently.
-            </p>
+            {/* Description */}
+            <p className="mt-8 max-w-3xl mx-auto text-center text-lg md:text-xl leading-relaxed text-blue-100">
+  We build professional websites, mobile applications, cybersecurity
+  solutions, artificial intelligence systems, cloud platforms, and innovative
+  digital products that help businesses, organizations, and startups grow
+  with confidence.
+</p>
 
-            {/* Buttons */}
-            <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-4">
+            {/* CTA Buttons */}
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+
               <Link
                 to="/contact"
-                className="bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold shadow-lg hover:bg-gray-100 hover:scale-105 transition"
+                 className="inline-flex items-center justify-center border-2 border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-700 transition duration-300"
               >
                 Start Your Project
               </Link>
 
               <Link
                 to="/services"
-                className="border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition"
+                className="inline-flex items-center justify-center border-2 border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-700 transition duration-300"
               >
                 Explore Services
               </Link>
+
+              <Link
+                to="/portfolio"
+                className="inline-flex items-center gap-2 border-2 border-cyan-300 text-cyan-300 px-8 py-4 rounded-xl font-semibold hover:bg-cyan-300 hover:text-blue-900 transition duration-300"
+              >
+                View Portfolio
+                <FaArrowRight />
+              </Link>
+
             </div>
 
             {/* Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14">
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center gap-3">
                 <FaLaptopCode className="text-cyan-300 text-2xl" />
-                <span>Software Development</span>
+                <span className="text-blue-100">
+                  Software Development
+                </span>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center gap-3">
                 <FaShieldAlt className="text-cyan-300 text-2xl" />
-                <span>Cybersecurity</span>
+                <span className="text-blue-100">
+                  Cybersecurity
+                </span>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center gap-3">
                 <FaRobot className="text-cyan-300 text-2xl" />
-                <span>Artificial Intelligence</span>
+                <span className="text-blue-100">
+                  Artificial Intelligence
+                </span>
               </div>
 
             </div>
+
           </motion.div>
 
-          {/* Right Content */}
+          {/* Right */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
@@ -87,10 +110,8 @@ function Hero() {
             <motion.img
               src="/logo.png"
               alt="SeeFuture Tech Hub Logo"
-              className="w-72 md:w-96 lg:w-[420px] drop-shadow-2xl"
-              animate={{
-                y: [0, -12, 0],
-              }}
+              className="w-72 md:w-96 lg:w-[430px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
+              animate={{ y: [0, -12, 0] }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
@@ -102,37 +123,45 @@ function Hero() {
         </div>
       </section>
 
-      {/* Company Highlights */}
-      <section className="bg-white py-16">
+      {/* Highlights Section */}
+      <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
 
-            <div className="bg-gray-50 rounded-xl shadow-sm p-8">
-              <h2 className="text-4xl font-bold text-blue-700">Web</h2>
-              <p className="mt-2 text-gray-600">
-                Development Solutions
+            <div className="bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition p-8 text-center">
+              <h2 className="text-4xl font-bold text-blue-700">
+                Web
+              </h2>
+              <p className="mt-3 text-gray-600 leading-7">
+                Professional Website Development
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-xl shadow-sm p-8">
-              <h2 className="text-4xl font-bold text-blue-700">Apps</h2>
-              <p className="mt-2 text-gray-600">
-                Mobile Development
+            <div className="bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition p-8 text-center">
+              <h2 className="text-4xl font-bold text-blue-700">
+                Apps
+              </h2>
+              <p className="mt-3 text-gray-600 leading-7">
+                Android & iOS Applications
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-xl shadow-sm p-8">
-              <h2 className="text-4xl font-bold text-blue-700">AI</h2>
-              <p className="mt-2 text-gray-600">
-                Smart Automation
+            <div className="bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition p-8 text-center">
+              <h2 className="text-4xl font-bold text-blue-700">
+                AI
+              </h2>
+              <p className="mt-3 text-gray-600 leading-7">
+                Artificial Intelligence Solutions
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-xl shadow-sm p-8">
-              <h2 className="text-4xl font-bold text-blue-700">Cloud</h2>
-              <p className="mt-2 text-gray-600">
-                Secure Infrastructure
+            <div className="bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition p-8 text-center">
+              <h2 className="text-4xl font-bold text-blue-700">
+                Cloud
+              </h2>
+              <p className="mt-3 text-gray-600 leading-7">
+                Secure Cloud Infrastructure
               </p>
             </div>
 
