@@ -1,153 +1,27 @@
+import SEO from "../components/SEO";
+import PageHero from "../components/PageHero";
 import { Link } from "react-router-dom";
-import {
-  FaGlobe,
-  FaMobileAlt,
-  FaShieldAlt,
-  FaRobot,
-  FaCloud,
-  FaGraduationCap,
-} from "react-icons/fa";
+import { FaGlobe, FaMobileAlt, FaShieldAlt, FaRobot, FaCloud, FaGraduationCap, FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
 const services = [
-  {
-    icon: <FaGlobe className="text-5xl text-blue-600" />,
-    title: "Website Development",
-    description:
-      "Modern, responsive, SEO-friendly websites for businesses, schools, NGOs, and government organizations.",
-  },
-  {
-    icon: <FaMobileAlt className="text-5xl text-blue-600" />,
-    title: "Mobile App Development",
-    description:
-      "Cross-platform Android and iOS applications built using modern technologies such as Flutter.",
-  },
-  {
-    icon: <FaShieldAlt className="text-5xl text-blue-600" />,
-    title: "Cybersecurity",
-    description:
-      "Security assessments, awareness training, vulnerability management, and digital protection services.",
-  },
-  {
-    icon: <FaRobot className="text-5xl text-blue-600" />,
-    title: "Artificial Intelligence",
-    description:
-      "AI-powered applications, automation, chatbots, and intelligent business solutions.",
-  },
-  {
-    icon: <FaCloud className="text-5xl text-blue-600" />,
-    title: "Cloud Solutions",
-    description:
-      "Cloud hosting, migration, deployment, backup, and scalable infrastructure services.",
-  },
-  {
-    icon: <FaGraduationCap className="text-5xl text-blue-600" />,
-    title: "Technology Training",
-    description:
-      "Professional training in software development, cybersecurity, AI, cloud computing, and digital skills.",
-  },
+  [FaGlobe, "Web & software development", "Responsive websites and business platforms designed around your users, workflows and growth goals.", ["React", "Vite", "Tailwind CSS"]],
+  [FaMobileAlt, "Mobile application development", "Cross-platform mobile experiences for services, communities, internal operations and customer-facing products.", ["Flutter", "Dart", "Firebase"]],
+  [FaShieldAlt, "Cybersecurity", "Security reviews, awareness, risk reduction and practical protection for digital systems.", ["Security review", "Risk assessment", "Best practices"]],
+  [FaRobot, "AI & automation", "Useful automation, intelligent assistants and AI-enabled workflows that reduce repetitive work.", ["AI workflows", "Automation", "Integrations"]],
+  [FaCloud, "Cloud solutions", "Deployment, hosting, backups and infrastructure guidance for dependable digital products.", ["Cloud hosting", "Deployment", "Backups"]],
+  [FaGraduationCap, "Technology training", "Hands-on learning paths for people building careers in software, AI, cybersecurity and digital technology.", ["Projects", "Mentorship", "Practical labs"]],
 ];
 
 function ServicesPage() {
-  return (
-    <>
-      {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-900 to-cyan-600 text-white py-24">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold">
-            Our Services
-          </h1>
+  return <>
+    <SEO title="Services | SeeFuture Tech Hub" description="Explore SeeFuture Tech Hub services including web development, mobile apps, cybersecurity, AI, cloud and technology training." keywords="web development Nigeria, mobile app development, cybersecurity, AI, cloud, tech training" />
+    <PageHero eyebrow="What we do" title="Digital solutions that are designed to be useful." description="From a polished public website to a custom internal platform, we combine thoughtful design, modern engineering and practical support." />
 
-          <p className="mt-6 text-lg text-blue-100 max-w-3xl mx-auto">
-            We provide innovative technology services that help organizations
-            improve efficiency, strengthen security, and achieve sustainable growth.
-          </p>
-        </div>
-      </section>
+    <section className="sf-section bg-slate-50"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{services.map(([Icon,title,text,tags], index) => <article key={title} className="sf-card group p-7"><div className="flex items-center justify-between"><div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-600"><Icon size={21}/></div><span className="text-sm font-black text-slate-200">0{index+1}</span></div><h2 className="mt-7 text-xl font-black text-slate-950">{title}</h2><p className="mt-3 leading-7 text-slate-600">{text}</p><div className="mt-5 flex flex-wrap gap-2">{tags.map(tag=><span key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-600">{tag}</span>)}</div><Link to="/contact" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-blue-600">Discuss this service <FaArrowRight size={11} className="transition group-hover:translate-x-1"/></Link></article>)}</div></div></section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
+    <section className="sf-section bg-white"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="max-w-3xl"><span className="sf-eyebrow">Our process</span><h2 className="mt-5 text-3xl font-black md:text-5xl">Clear from first conversation to launch.</h2></div><div className="mt-12 grid gap-5 md:grid-cols-4">{[["01","Discover","Understand the goal, audience, constraints and success criteria."],["02","Plan","Define scope, priorities, architecture and a practical delivery plan."],["03","Build","Design, develop, test and refine the solution in focused stages."],["04","Support","Launch confidently and keep improving as needs change."]].map(([n,t,d])=><div className="relative rounded-2xl border border-slate-200 p-6" key={n}><span className="text-sm font-black text-blue-600">{n}</span><h3 className="mt-4 text-xl font-black">{t}</h3><p className="mt-3 text-sm leading-7 text-slate-600">{d}</p></div>)}</div></div></section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="bg-white rounded-2xl shadow-md p-8 hover:-translate-y-2 hover:shadow-xl transition duration-300"
-              >
-                <div className="mb-6">{service.icon}</div>
-
-                <h3 className="text-2xl font-bold text-gray-800">
-                  {service.title}
-                </h3>
-
-                <p className="mt-4 text-gray-600 leading-7">
-                  {service.description}
-                </p>
-
-                <Link
-  to="/contact"
-  className="inline-flex items-center justify-center mt-6 bg-blue-700 text-white px-5 py-3 rounded-lg hover:bg-blue-800 transition duration-300"
->
-  Learn More
-</Link>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-
-          <h2 className="text-4xl font-bold text-blue-700">
-            How We Work
-          </h2>
-
-          <div className="grid md:grid-cols-4 gap-8 mt-14">
-            {[
-              "1. Discover",
-              "2. Plan",
-              "3. Build",
-              "4. Support",
-            ].map((step) => (
-              <div
-                key={step}
-                className="bg-white rounded-xl shadow-md p-8"
-              >
-                <h3 className="text-2xl font-bold text-blue-700">
-                  {step}
-                </h3>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-blue-700 text-white py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold">
-            Ready to Start Your Next Project?
-          </h2>
-
-          <p className="mt-6 text-blue-100">
-            Whether you need a website, mobile app, cybersecurity support,
-            or technology consulting, we're here to help.
-          </p>
-
-         <Link
-  to="/contact"
-  className="inline-flex items-center justify-center mt-8 bg-white text-blue-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
->
-  Contact Us Today
-</Link>
-        </div>
-      </section>
-    </>
-  );
+    <section className="sf-section bg-slate-950 text-white"><div className="mx-auto max-w-4xl px-5 text-center lg:px-8"><span className="sf-eyebrow bg-white/10 text-cyan-300">Ready when you are</span><h2 className="mt-5 text-3xl font-black md:text-5xl">Have a problem worth solving?</h2><p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-300">Tell us what you are trying to achieve. We can help shape the right technology approach before development begins.</p><Link to="/contact" className="sf-btn sf-btn-primary mt-8">Start a conversation <FaArrowRight size={12}/></Link></div></section>
+  </>;
 }
-
 export default ServicesPage;

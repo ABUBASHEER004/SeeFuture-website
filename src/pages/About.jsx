@@ -1,245 +1,65 @@
 import SEO from "../components/SEO";
+import PageHero from "../components/PageHero";
+import { Link } from "react-router-dom";
+import { FaCheckCircle, FaBullseye, FaEye, FaShieldAlt, FaLightbulb, FaHandshake } from "react-icons/fa";
+
+const values = [
+  [FaLightbulb, "Innovation", "We look for practical, modern ways to solve real problems."],
+  [FaShieldAlt, "Integrity", "We communicate clearly, protect client trust and take ownership of our work."],
+  [FaHandshake, "Partnership", "We work alongside clients rather than simply handing over software."],
+  [FaCheckCircle, "Quality", "We care about usability, maintainability, performance and security."],
+];
 
 function About() {
   return (
     <>
-      <SEO
-        title="About SeeFuture Tech Hub"
-        description="Learn about SeeFuture Tech Hub, our mission, vision, values, and commitment to digital innovation."
-        keywords="About SeeFuture Tech Hub, Technology Company Kaduna, Software Company Nigeria"
+      <SEO title="About SeeFuture Tech Hub" description="Learn about SeeFuture Tech Hub, our mission, vision, values and technology capabilities." keywords="SeeFuture Tech Hub, technology company Nigeria, software development, digital transformation" />
+      <PageHero
+        eyebrow="About SeeFuture Tech Hub"
+        title="Technology built around people, problems and possibilities."
+        description="We help businesses, institutions, startups and professionals turn ideas into useful digital products, secure systems and practical technology capabilities."
+        action="Talk to our team"
       />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-600 text-white py-24">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-
-          <span className="inline-block bg-white/20 px-5 py-2 rounded-full text-sm font-semibold tracking-wide">
-            About Our Company
-          </span>
-
-          <h1 className="mt-6 text-5xl md:text-6xl font-extrabold leading-tight">
-            Building Africa's Digital Future
-          </h1>
-
-          <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl leading-9 text-blue-100">
-            We help businesses, startups, educational institutions, and
-            organizations embrace digital transformation through innovative,
-            secure, and scalable technology solutions.
-          </p>
-
-        </div>
-      </section>
-
-      {/* Company Story */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
-
-          <div className="flex justify-center">
-            <img
-              src="/logo.png"
-              alt="SeeFuture Tech Hub"
-              className="w-80 md:w-96 drop-shadow-2xl"
-            />
+      <section className="sf-section bg-white">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
+          <div className="sf-card sf-grid relative flex min-h-[380px] items-center justify-center overflow-hidden bg-slate-950 p-10">
+            <div className="absolute h-72 w-72 rounded-full border border-cyan-400/20" />
+            <div className="absolute h-52 w-52 rounded-full border border-blue-400/20" />
+            <img src="/logo.png" alt="SeeFuture Tech Hub" className="relative z-10 w-56 drop-shadow-2xl" />
           </div>
-
-          <div className="space-y-8">
-
-            <h2 className="text-4xl font-bold text-blue-700">
-              Who We Are
-            </h2>
-
-            <p className="text-lg leading-9 text-gray-600">
-              <strong>SeeFuture Tech Hub</strong> is a forward-thinking
-              technology company dedicated to delivering innovative,
-              high-quality digital solutions that help organizations thrive
-              in an increasingly digital world.
-            </p>
-
-            <p className="text-lg leading-9 text-gray-600">
-              Our expertise spans software engineering, website development,
-              mobile applications, cybersecurity, cloud computing,
-              artificial intelligence, IT consulting, digital transformation,
-              and professional technology training.
-            </p>
-
-            <p className="text-lg leading-9 text-gray-600">
-              We believe technology should solve real-world problems,
-              improve productivity, create opportunities, and positively
-              impact communities across Nigeria and beyond.
-            </p>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* CAC Registration */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-
-          <div className="bg-white rounded-3xl shadow-xl p-10 lg:p-14">
-
-            <div className="flex items-center gap-5 mb-10">
-
-              <div className="w-16 h-16 rounded-full bg-blue-700 flex items-center justify-center text-white text-3xl">
-                ✓
-              </div>
-
-              <div>
-
-                <h2 className="text-4xl font-bold text-blue-700">
-                  Registered Business
-                </h2>
-
-                <p className="text-gray-500 mt-2">
-                  Corporate Affairs Commission (CAC), Nigeria
-                </p>
-
-              </div>
-
+          <div>
+            <span className="sf-eyebrow">Who we are</span>
+            <h2 className="mt-5 text-3xl font-black tracking-tight text-slate-950 md:text-5xl">A technology hub focused on useful outcomes.</h2>
+            <p className="mt-6 text-lg leading-8 text-slate-600">SeeFuture Tech Hub is a forward-looking Nigerian technology company delivering software, websites, mobile applications, cybersecurity, AI, cloud and technology training.</p>
+            <p className="mt-5 leading-8 text-slate-600">Our approach is simple: understand the problem, design the right solution, build it carefully and stay available after launch.</p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {["Business software", "Modern websites", "Mobile applications", "AI & automation", "Cybersecurity", "Technology training"].map((item) => <div key={item} className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 font-semibold text-slate-700"><FaCheckCircle className="text-blue-600" />{item}</div>)}
             </div>
-
-            <p className="text-lg leading-9 text-gray-600">
-              SeeFuture Tech Hub is officially registered with the Corporate
-              Affairs Commission (CAC) of Nigeria. Our registration reflects
-              our commitment to professionalism, transparency, accountability,
-              and trusted technology services.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
-
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h4 className="font-bold text-blue-700">
-                  Business Name
-                </h4>
-
-                <p className="mt-3 text-gray-600">
-                  SEEFUTURE TECH HUB
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h4 className="font-bold text-blue-700">
-                  Registration Number
-                </h4>
-
-                <p className="mt-3 text-gray-600">
-                  9680560
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h4 className="font-bold text-blue-700">
-                  Registration Date
-                </h4>
-
-                <p className="mt-3 text-gray-600">
-                  14 July 2026
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h4 className="font-bold text-blue-700">
-                  Office Location
-                </h4>
-
-                <p className="mt-3 text-gray-600">
-                  Kaduna North, Kaduna State, Nigeria
-                </p>
-              </div>
-
-            </div>
-
-            <div className="mt-12">
-              <a
-                href="/cac-certificate.png"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-800 transition duration-300"
-              >
-                View CAC Certificate
-              </a>
-            </div>
-
           </div>
-
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-
-          <div className="bg-white rounded-2xl shadow-lg p-10 hover:shadow-xl transition">
-
-            <h3 className="text-3xl font-bold text-blue-700 mb-6">
-              Our Mission
-            </h3>
-
-            <p className="text-lg leading-9 text-gray-600">
-              To empower businesses, organizations, and communities with
-              innovative, secure, reliable, and affordable technology
-              solutions that accelerate growth and long-term success.
-            </p>
-
+      <section className="sf-section bg-slate-50">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="grid gap-6 md:grid-cols-2">
+            <article className="sf-card p-8 md:p-10"><div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600"><FaBullseye size={23} /></div><h2 className="mt-7 text-2xl font-black text-slate-950">Our mission</h2><p className="mt-4 leading-8 text-slate-600">To make reliable, secure and affordable technology more accessible to businesses, organizations and communities.</p></article>
+            <article className="sf-card p-8 md:p-10"><div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-600"><FaEye size={23} /></div><h2 className="mt-7 text-2xl font-black text-slate-950">Our vision</h2><p className="mt-4 leading-8 text-slate-600">To grow into a trusted African technology partner known for practical innovation, excellent delivery and lasting client relationships.</p></article>
           </div>
-
-          <div className="bg-white rounded-2xl shadow-lg p-10 hover:shadow-xl transition">
-
-            <h3 className="text-3xl font-bold text-blue-700 mb-6">
-              Our Vision
-            </h3>
-
-            <p className="text-lg leading-9 text-gray-600">
-              To become one of Africa's leading technology hubs, recognized
-              globally for innovation, excellence, digital transformation,
-              and customer satisfaction.
-            </p>
-
-          </div>
-
         </div>
       </section>
 
-      {/* Core Values */}
-      <section className="py-24 bg-gray-50">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <h2 className="text-4xl font-bold text-center text-blue-700">
-            Our Core Values
-          </h2>
-
-          <p className="text-center text-gray-600 mt-6 max-w-3xl mx-auto text-lg leading-8">
-            Everything we do is guided by values that inspire innovation,
-            build trust, and create lasting impact.
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-
-            {[
-              "Innovation",
-              "Integrity",
-              "Professionalism",
-              "Customer Success",
-            ].map((value) => (
-              <div
-                key={value}
-                className="bg-white rounded-2xl shadow-lg p-10 text-center hover:-translate-y-2 hover:shadow-2xl transition duration-300"
-              >
-                <h3 className="text-2xl font-bold text-blue-700">
-                  {value}
-                </h3>
-              </div>
-            ))}
-
-          </div>
-
+      <section className="sf-section bg-white">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="max-w-3xl"><span className="sf-eyebrow">How we think</span><h2 className="mt-5 text-3xl font-black text-slate-950 md:text-5xl">Values that show up in the work.</h2></div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">{values.map(([Icon, title, text]) => <article className="sf-card p-7" key={title}><Icon className="text-2xl text-blue-600" /><h3 className="mt-5 text-xl font-extrabold">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}</div>
         </div>
+      </section>
 
+      <section className="sf-section bg-slate-950 text-white">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8"><div><span className="sf-eyebrow bg-white/10 text-cyan-300">Registered business</span><h2 className="mt-5 text-3xl font-black md:text-4xl">SEEFUTURE TECH HUB</h2><p className="mt-3 text-slate-300">Corporate Affairs Commission registration number: 9680560.</p></div><a className="sf-btn sf-btn-light" href="/cac-certificate.png" target="_blank" rel="noopener noreferrer">View CAC certificate</a></div>
       </section>
     </>
   );
 }
-
 export default About;

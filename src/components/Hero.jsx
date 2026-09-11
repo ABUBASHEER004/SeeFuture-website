@@ -1,176 +1,52 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import {
-  FaCheckCircle,
-  FaLaptopCode,
-  FaShieldAlt,
-  FaRobot,
-  FaArrowRight,
-} from "react-icons/fa";
+import { FaArrowRight, FaCheckCircle, FaCode, FaShieldAlt, FaBrain, FaStar } from "react-icons/fa";
+
+const capabilities = [
+  [FaCode, "Software & Web"], [FaShieldAlt, "Cybersecurity"], [FaBrain, "AI & Automation"],
+];
 
 function Hero() {
   return (
-    <>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-500 text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
-
-          {/* Left */}
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="lg:w-1/2 text-center"
-          >
-            {/* Badge */}
-            <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-full text-sm font-semibold mb-8">
-              <FaCheckCircle className="text-cyan-300" />
-              Welcome to SeeFuture Tech Hub
-            </span>
-
-            {/* Heading */}
-            <h1 className="text-5xl md:text-6xl xl:text-7xl font-extrabold leading-tight">
-              Technology That{" "}
-              <span className="text-cyan-300">
-                Transforms Ideas
-              </span>{" "}
-              Into Reality
-            </h1>
-
-            {/* Description */}
-            <p className="mt-8 max-w-3xl mx-auto text-center text-lg md:text-xl leading-relaxed text-blue-100">
-  We build professional websites, mobile applications, cybersecurity
-  solutions, artificial intelligence systems, cloud platforms, and innovative
-  digital products that help businesses, organizations, and startups grow
-  with confidence.
-</p>
-
-            {/* CTA Buttons */}
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-
-              <Link
-                to="/contact"
-                 className="inline-flex items-center justify-center border-2 border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-700 transition duration-300"
-              >
-                Start Your Project
-              </Link>
-
-              <Link
-                to="/services"
-                className="inline-flex items-center justify-center border-2 border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-700 transition duration-300"
-              >
-                Explore Services
-              </Link>
-
-              <Link
-                to="/portfolio"
-                className="inline-flex items-center gap-2 border-2 border-cyan-300 text-cyan-300 px-8 py-4 rounded-xl font-semibold hover:bg-cyan-300 hover:text-blue-900 transition duration-300"
-              >
-                View Portfolio
-                <FaArrowRight />
-              </Link>
-
-            </div>
-
-            {/* Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14">
-
-              <div className="flex items-center justify-center gap-3">
-                <FaLaptopCode className="text-cyan-300 text-2xl" />
-                <span className="text-blue-100">
-                  Software Development
-                </span>
-              </div>
-
-              <div className="flex items-center justify-center gap-3">
-                <FaShieldAlt className="text-cyan-300 text-2xl" />
-                <span className="text-blue-100">
-                  Cybersecurity
-                </span>
-              </div>
-
-              <div className="flex items-center justify-center gap-3">
-                <FaRobot className="text-cyan-300 text-2xl" />
-                <span className="text-blue-100">
-                  Artificial Intelligence
-                </span>
-              </div>
-
-            </div>
-
-          </motion.div>
-
-          {/* Right */}
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            className="lg:w-1/2 flex justify-center"
-          >
-            <motion.img
-              src="/logo.png"
-              alt="SeeFuture Tech Hub Logo"
-              className="w-72 md:w-96 lg:w-[430px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.35)]"
-              animate={{ y: [0, -12, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* Highlights Section */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <div className="bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition p-8 text-center">
-              <h2 className="text-4xl font-bold text-blue-700">
-                Web
-              </h2>
-              <p className="mt-3 text-gray-600 leading-7">
-                Professional Website Development
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition p-8 text-center">
-              <h2 className="text-4xl font-bold text-blue-700">
-                Apps
-              </h2>
-              <p className="mt-3 text-gray-600 leading-7">
-                Android & iOS Applications
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition p-8 text-center">
-              <h2 className="text-4xl font-bold text-blue-700">
-                AI
-              </h2>
-              <p className="mt-3 text-gray-600 leading-7">
-                Artificial Intelligence Solutions
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl shadow-md hover:shadow-xl transition p-8 text-center">
-              <h2 className="text-4xl font-bold text-blue-700">
-                Cloud
-              </h2>
-              <p className="mt-3 text-gray-600 leading-7">
-                Secure Cloud Infrastructure
-              </p>
-            </div>
-
+    <section className="sf-shell sf-grid bg-slate-950 text-white">
+      <div className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-blue-600/20 blur-3xl sf-orb" />
+      <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-cyan-400/15 blur-3xl sf-orb" />
+      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-[1.08fr_.92fr] lg:px-8 lg:py-28">
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7 }}>
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[.12em] text-blue-100 backdrop-blur-md">
+            <FaCheckCircle className="text-cyan-300" /> Nigeria-based technology partner
+          </span>
+          <h1 className="mt-7 max-w-4xl text-5xl font-black leading-[1.03] tracking-[-.045em] md:text-6xl lg:text-7xl">
+            We turn ambitious ideas into <span className="sf-gradient-text">digital products.</span>
+          </h1>
+          <p className="mt-7 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+            SeeFuture Tech Hub designs and builds modern websites, mobile apps, business software, AI solutions and secure digital experiences that help organizations move forward.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link to="/contact" className="sf-btn sf-btn-primary">Start your project <FaArrowRight size={13} /></Link>
+            <Link to="/portfolio" className="sf-btn border border-white/20 bg-white/5 text-white hover:bg-white/10">Explore our work</Link>
           </div>
+          <div className="mt-12 grid max-w-2xl gap-3 sm:grid-cols-3">
+            {capabilities.map(([Icon, text]) => <div key={text} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[.04] p-4"><Icon className="text-cyan-300" /><span className="text-sm font-semibold text-slate-200">{text}</span></div>)}
+          </div>
+        </motion.div>
 
-        </div>
-      </section>
-    </>
+        <motion.div initial={{ opacity: 0, scale: .94, x: 30 }} animate={{ opacity: 1, scale: 1, x: 0 }} transition={{ duration: .8, delay: .1 }} className="relative mx-auto w-full max-w-[520px]">
+          <div className="absolute -inset-8 rounded-[40px] bg-gradient-to-br from-blue-500/20 to-cyan-400/10 blur-2xl" />
+          <div className="sf-glass relative overflow-hidden rounded-[32px] border-white/10 bg-white/[.07] p-6 text-white">
+            <div className="flex items-center justify-between border-b border-white/10 pb-5"><div><p className="text-xs font-bold uppercase tracking-[.18em] text-cyan-300">Digital transformation</p><h2 className="mt-1 text-2xl font-bold">Built for what comes next.</h2></div><FaStar className="text-yellow-300" /></div>
+            <div className="relative flex min-h-[320px] items-center justify-center py-8">
+              <div className="absolute h-64 w-64 rounded-full border border-cyan-300/20" />
+              <div className="absolute h-48 w-48 rounded-full border border-blue-400/20" />
+              <img src="/logo.png" alt="SeeFuture Tech Hub" className="sf-float relative z-10 w-48 drop-shadow-[0_25px_50px_rgba(0,0,0,.45)]" />
+              <div className="absolute left-3 top-8 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-md"><span className="block text-xs text-slate-300">Focus</span><strong className="text-sm">Real business value</strong></div>
+              <div className="absolute bottom-5 right-2 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-md"><span className="block text-xs text-slate-300">Approach</span><strong className="text-sm">Secure & scalable</strong></div>
+            </div>
+            <div className="grid grid-cols-3 gap-2 border-t border-white/10 pt-5 text-center"><div><strong className="block text-xl">Web</strong><span className="text-xs text-slate-400">Platforms</span></div><div><strong className="block text-xl">Apps</strong><span className="text-xs text-slate-400">Mobile</span></div><div><strong className="block text-xl">AI</strong><span className="text-xs text-slate-400">Automation</span></div></div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 }
-
 export default Hero;

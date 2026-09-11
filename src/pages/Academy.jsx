@@ -1,151 +1,27 @@
 import SEO from "../components/SEO";
+import PageHero from "../components/PageHero";
 import { Link } from "react-router-dom";
-import {
-  FaCode,
-  FaMobileAlt,
-  FaShieldAlt,
-  FaRobot,
-  FaCloud,
-  FaDatabase,
-} from "react-icons/fa";
+import { FaCode, FaMobileAlt, FaShieldAlt, FaRobot, FaCloud, FaDatabase, FaArrowRight } from "react-icons/fa";
 
 const courses = [
-  {
-    icon: <FaCode className="text-5xl text-blue-600" />,
-    title: "Full Stack Web Development",
-    duration: "24 Weeks",
-    level: "Beginner - Advanced",
-  },
-  {
-    icon: <FaMobileAlt className="text-5xl text-blue-600" />,
-    title: "Flutter Mobile Development",
-    duration: "16 Weeks",
-    level: "Beginner",
-  },
-  {
-    icon: <FaShieldAlt className="text-5xl text-blue-600" />,
-    title: "Cybersecurity",
-    duration: "20 Weeks",
-    level: "Beginner",
-  },
-  {
-    icon: <FaRobot className="text-5xl text-blue-600" />,
-    title: "Artificial Intelligence",
-    duration: "24 Weeks",
-    level: "Beginner",
-  },
-  {
-    icon: <FaCloud className="text-5xl text-blue-600" />,
-    title: "Cloud Computing",
-    duration: "24 Weeks",
-    level: "Beginner",
-  },
-  {
-    icon: <FaDatabase className="text-5xl text-blue-600" />,
-    title: "Database Management",
-    duration: "16 Weeks",
-    level: "Beginner",
-  },
+  [FaCode, "Full Stack Web Development", "24 weeks", "Beginner → Advanced", "Build responsive interfaces, APIs and production-ready web applications."],
+  [FaMobileAlt, "Flutter Mobile Development", "16 weeks", "Beginner", "Learn how to design and build cross-platform mobile applications."],
+  [FaShieldAlt, "Cybersecurity", "20 weeks", "Beginner", "Build practical security knowledge, safer habits and foundational assessment skills."],
+  [FaRobot, "Artificial Intelligence", "24 weeks", "Beginner", "Understand modern AI concepts and turn them into useful projects and workflows."],
+  [FaCloud, "Cloud Computing", "24 weeks", "Beginner", "Learn deployment, hosting, infrastructure concepts and cloud-first thinking."],
+  [FaDatabase, "Database Management", "16 weeks", "Beginner", "Understand data modeling, queries, application data and reliable storage practices."],
 ];
 
 function Academy() {
-  return (
-    <>
-      <SEO
-        title="SeeFuture Tech Academy | Learn Software Development, AI & Cybersecurity"
-        description="Join SeeFuture Tech Academy to learn Full Stack Web Development, Flutter, Cybersecurity, Artificial Intelligence, Cloud Computing, and Database Management through practical, project-based training."
-        keywords="SeeFuture Tech Academy, Technology Training, Flutter Course, React Course, Full Stack Development, Cybersecurity Training, AI Course, Cloud Computing, Database Management, Kaduna, Nigeria"
-      />
+  return <>
+    <SEO title="SeeFuture Tech Academy | Practical Technology Training" description="Practical technology training in web development, Flutter, cybersecurity, AI, cloud computing and database management." keywords="SeeFuture Tech Academy, tech training Nigeria, web development course, Flutter, cybersecurity, AI, cloud" />
+    <PageHero eyebrow="SeeFuture Tech Academy" title="Learn by building, not just watching." description="Practical, project-oriented training designed to help learners develop useful technology skills and a portfolio they can talk about." action="Ask about enrollment" />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 via-blue-700 to-cyan-600 text-white py-24">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold">
-            SeeFuture Tech Academy
-          </h1>
+    <section className="sf-section bg-slate-50"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{courses.map(([Icon,title,duration,level,text])=><article className="sf-card p-7" key={title}><div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-600"><Icon size={21}/></div><h2 className="mt-6 text-xl font-black">{title}</h2><p className="mt-3 leading-7 text-slate-600">{text}</p><div className="mt-5 grid grid-cols-2 gap-3 text-sm"><div className="rounded-xl bg-slate-50 p-3"><span className="block text-xs font-bold text-slate-400">Duration</span><strong>{duration}</strong></div><div className="rounded-xl bg-slate-50 p-3"><span className="block text-xs font-bold text-slate-400">Level</span><strong>{level}</strong></div></div><Link to="/contact" className="sf-btn sf-btn-primary mt-6 w-full">Ask about this course <FaArrowRight size={11}/></Link></article>)}</div></div></section>
 
-          <p className="mt-6 max-w-3xl mx-auto text-blue-100 text-lg leading-8">
-            Learn today's most in-demand technology skills through practical,
-            project-based training led by experienced instructors.
-          </p>
-        </div>
-      </section>
+    <section className="sf-section bg-white"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="max-w-3xl"><span className="sf-eyebrow">Learning experience</span><h2 className="mt-5 text-3xl font-black md:text-5xl">A practical path from curiosity to capability.</h2></div><div className="mt-12 grid gap-5 md:grid-cols-3">{[["01","Learn","Understand the concepts with clear explanations and guided exercises."],["02","Build","Apply each lesson to projects that grow in complexity."],["03","Present","Finish with work you can demonstrate, discuss and improve."]].map(([n,t,d])=><div className="rounded-2xl border border-slate-200 p-7" key={n}><span className="text-sm font-black text-blue-600">{n}</span><h3 className="mt-4 text-xl font-black">{t}</h3><p className="mt-3 leading-7 text-slate-600">{d}</p></div>)}</div></div></section>
 
-      {/* Courses */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-blue-700">
-              Available Courses
-            </h2>
-
-            <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
-              Gain practical skills that prepare you for careers in software
-              engineering, cybersecurity, artificial intelligence, cloud
-              computing, and modern application development.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
-            {courses.map((course) => (
-              <div
-                key={course.title}
-                className="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 hover:shadow-2xl transition duration-300"
-              >
-                <div className="flex justify-center">
-                  {course.icon}
-                </div>
-
-                <h2 className="mt-6 text-2xl font-bold text-center">
-                  {course.title}
-                </h2>
-
-                <div className="mt-6 space-y-2 text-gray-600">
-                  <p>
-                    <strong>Duration:</strong> {course.duration}
-                  </p>
-
-                  <p>
-                    <strong>Level:</strong> {course.level}
-                  </p>
-                </div>
-
-                <Link
-  to="/contact"
-  className="inline-flex items-center justify-center mt-6 bg-blue-700 text-white px-5 py-3 rounded-lg hover:bg-blue-800 transition duration-300"
->
-                  Enroll Now
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call To Action */}
-      <section className="bg-blue-700 text-white py-20">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold">
-            Ready to Start Your Tech Journey?
-          </h2>
-
-          <p className="mt-6 text-lg text-blue-100">
-            Join hundreds of learners building practical skills in software
-            development, cybersecurity, AI, cloud computing, and mobile app
-            development.
-          </p>
-
-          <Link
-  to="/contact"
-  className="inline-flex items-center justify-center mt-6 bg-blue-700 text-white px-5 py-3 rounded-lg hover:bg-blue-800 transition duration-300"
->
-            Register Today
-          </Link>
-        </div>
-      </section>
-    </>
-  );
+    <section className="sf-section bg-slate-950 text-white"><div className="mx-auto max-w-4xl px-5 text-center lg:px-8"><span className="sf-eyebrow bg-white/10 text-cyan-300">Start learning</span><h2 className="mt-5 text-3xl font-black md:text-5xl">Ready to build your first serious project?</h2><p className="mt-5 leading-8 text-slate-300">Send us a message with the course you are interested in and we will guide you on the next step.</p><Link to="/contact" className="sf-btn sf-btn-primary mt-8">Contact the academy <FaArrowRight size={12}/></Link></div></section>
+  </>;
 }
-
 export default Academy;

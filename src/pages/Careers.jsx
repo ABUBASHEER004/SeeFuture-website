@@ -1,207 +1,25 @@
 import SEO from "../components/SEO";
+import PageHero from "../components/PageHero";
 import { Link } from "react-router-dom";
-import {
-  FaLaptopCode,
-  FaUsers,
-  FaGraduationCap,
-  FaGlobeAfrica,
-  FaHeart,
-  FaRocket,
-} from "react-icons/fa";
+import { FaLaptopCode, FaUsers, FaGraduationCap, FaGlobeAfrica, FaArrowRight } from "react-icons/fa";
 
+const benefits = [[FaLaptopCode,"Modern stack","Work with contemporary web, mobile, AI, cloud and security technologies."],[FaUsers,"Team culture","Collaborate with people who care about learning, delivery and useful outcomes."],[FaGraduationCap,"Keep learning","Grow through projects, mentorship, experimentation and continuous improvement."],[FaGlobeAfrica,"Real-world impact","Build technology for businesses, institutions and communities across Africa."]];
 const jobs = [
-  {
-    title: "Frontend React Developer",
-    type: "Full Time",
-    location: "Kaduna, Nigeria / Remote",
-    description:
-      "Build modern, responsive web applications using React, Tailwind CSS, and modern JavaScript.",
-  },
-  {
-    title: "Flutter Mobile Developer",
-    type: "Full Time",
-    location: "Kaduna, Nigeria / Remote",
-    description:
-      "Develop high-quality Android and iOS applications using Flutter and Firebase.",
-  },
-  {
-    title: "Cybersecurity Analyst",
-    type: "Full Time",
-    location: "Kaduna, Nigeria",
-    description:
-      "Help secure digital systems, conduct security assessments, and support clients with cybersecurity solutions.",
-  },
-];
-
-const benefits = [
-  {
-    icon: <FaLaptopCode className="text-4xl text-blue-700" />,
-    title: "Modern Technologies",
-    text: "Work with React, Flutter, AI, Cloud Computing, and Cybersecurity tools.",
-  },
-  {
-    icon: <FaUsers className="text-4xl text-blue-700" />,
-    title: "Great Team",
-    text: "Collaborate with talented professionals in a supportive environment.",
-  },
-  {
-    icon: <FaGraduationCap className="text-4xl text-blue-700" />,
-    title: "Continuous Learning",
-    text: "Access regular training, mentorship, and career development opportunities.",
-  },
-  {
-    icon: <FaGlobeAfrica className="text-4xl text-blue-700" />,
-    title: "Real Impact",
-    text: "Build solutions that serve businesses, schools, and communities across Africa.",
-  },
+  ["Frontend React Developer","Full time / Remote-friendly","Build accessible, responsive interfaces and reusable components."],
+  ["Flutter Mobile Developer","Full time / Remote-friendly","Create polished cross-platform mobile experiences backed by reliable data."],
+  ["Cybersecurity Analyst","Full time / Kaduna","Support security reviews, awareness initiatives and practical risk reduction."],
 ];
 
 function Careers() {
-  return (
-    <>
-      <SEO
-        title="Careers | SeeFuture Tech Hub"
-        description="Join SeeFuture Tech Hub and build innovative software, mobile applications, AI solutions, cloud platforms, and cybersecurity systems."
-        keywords="Careers, Jobs, React Developer, Flutter Developer, Cybersecurity Jobs, Kaduna, Nigeria"
-      />
+  return <>
+    <SEO title="Careers | SeeFuture Tech Hub" description="Explore career opportunities at SeeFuture Tech Hub across software development, mobile applications and cybersecurity." keywords="SeeFuture Tech Hub careers, React developer, Flutter developer, cybersecurity jobs Nigeria" />
+    <PageHero eyebrow="Careers" title="Do meaningful technology work with us." description="We are interested in people who are curious, dependable and excited about building useful digital products and helping others grow." action="Send your interest" />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-900 via-blue-700 to-cyan-600 text-white py-24">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold">
-            Build Your Career With Us
-          </h1>
+    <section className="sf-section bg-slate-50"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="max-w-3xl"><span className="sf-eyebrow">Why join</span><h2 className="mt-5 text-3xl font-black md:text-5xl">A place to learn while you deliver.</h2></div><div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">{benefits.map(([Icon,title,text])=><article className="sf-card p-7" key={title}><Icon className="text-2xl text-blue-600"/><h3 className="mt-5 text-xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}</div></div></section>
 
-          <p className="mt-6 text-lg text-blue-100 max-w-3xl mx-auto">
-            At SeeFuture Tech Hub, we believe talented people create amazing
-            technology. Join us to build innovative digital solutions that make
-            a difference.
-          </p>
-        </div>
-      </section>
+    <section className="sf-section bg-white"><div className="mx-auto max-w-5xl px-5 lg:px-8"><div className="text-center"><span className="sf-eyebrow">Open opportunities</span><h2 className="mt-5 text-3xl font-black md:text-5xl">Roles we are interested in.</h2><p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-600">Availability can change. Contact us to confirm the current opening and application process before sending your CV.</p></div><div className="mt-12 space-y-5">{jobs.map(([title,type,text])=><article className="sf-card p-7 md:flex md:items-center md:justify-between md:gap-8" key={title}><div><h3 className="text-xl font-black">{title}</h3><p className="mt-2 text-sm font-bold text-blue-600">{type}</p><p className="mt-3 leading-7 text-slate-600">{text}</p></div><Link to="/contact" className="sf-btn sf-btn-light mt-6 shrink-0 md:mt-0">Apply / enquire <FaArrowRight size={11}/></Link></article>)}</div></div></section>
 
-      {/* Why Join Us */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-blue-700">
-              Why Work With Us?
-            </h2>
-
-            <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
-              We invest in our people by providing opportunities to learn,
-              innovate, and grow while working on exciting technology projects.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
-            {benefits.map((benefit) => (
-              <div
-                key={benefit.title}
-                className="bg-white rounded-2xl shadow-lg p-8 text-center hover:-translate-y-2 hover:shadow-xl transition"
-              >
-                <div className="flex justify-center">
-                  {benefit.icon}
-                </div>
-
-                <h3 className="text-xl font-bold mt-5">
-                  {benefit.title}
-                </h3>
-
-                <p className="mt-4 text-gray-600">
-                  {benefit.text}
-                </p>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* Open Positions */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <h2 className="text-4xl font-bold text-center text-blue-700">
-            Current Openings
-          </h2>
-
-          <div className="mt-12 space-y-8">
-            {jobs.map((job) => (
-              <div
-                key={job.title}
-                className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100"
-              >
-                <h3 className="text-2xl font-bold text-blue-700">
-                  {job.title}
-                </h3>
-
-                <p className="mt-2 text-gray-600">
-                  <strong>Employment:</strong> {job.type}
-                </p>
-
-                <p className="text-gray-600">
-                  <strong>Location:</strong> {job.location}
-                </p>
-
-                <p className="mt-4 text-gray-700">
-                  {job.description}
-                </p>
-
-               <Link
-  to="/contact"
-  className="inline-flex items-center justify-center mt-6 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition duration-300"
->
-  Apply Now
-</Link>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-blue-700 text-white py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-
-          <FaHeart className="mx-auto text-5xl mb-6" />
-
-          <h2 className="text-4xl font-bold">
-            Don't See a Suitable Role?
-          </h2>
-
-          <p className="mt-6 text-lg text-blue-100">
-            We're always looking for passionate and talented individuals.
-            Send us your CV and we'll contact you when a suitable opportunity
-            becomes available.
-          </p>
-
-          <Link
-  to="/contact"
-  className="inline-flex items-center justify-center gap-3 mt-8 border-2 border-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-blue-700 transition duration-300"
->
-  <FaRocket />
-  Send Your CV
-</Link>
-
-<select
-  name="subject"
-  className="w-full border rounded-lg px-4 py-3"
-  required
->
-  <option value="">Select Subject</option>
-  <option value="Project Request">Project Request</option>
-  <option value="General Enquiry">General Enquiry</option>
-  <option value="Job Application">Job Application</option>
-  <option value="Training Enquiry">Training Enquiry</option>
-</select>
-
-        </div>
-      </section>
-    </>
-  );
+    <section className="sf-section bg-slate-950 text-white"><div className="mx-auto max-w-4xl px-5 text-center lg:px-8"><span className="sf-eyebrow bg-white/10 text-cyan-300">Open application</span><h2 className="mt-5 text-3xl font-black md:text-5xl">Don't see your exact role?</h2><p className="mt-5 leading-8 text-slate-300">Tell us what you do, what you are learning and what kind of work you want to contribute to. We can keep your interest in mind for future opportunities.</p><Link to="/contact" className="sf-btn sf-btn-primary mt-8">Contact SeeFuture <FaArrowRight size={12}/></Link></div></section>
+  </>;
 }
-
 export default Careers;
