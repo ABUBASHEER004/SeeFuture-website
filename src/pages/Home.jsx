@@ -2,6 +2,7 @@ import SEO from "../components/SEO";
 import Hero from "../components/Hero";
 import TrustedSection from "../components/TrustedSection";
 import Services from "../components/Services";
+import DataAnalyticsSection from "../components/DataAnalyticsSection";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Stats from "../components/Stats";
 import AboutPreview from "../components/AboutPreview";
@@ -12,10 +13,11 @@ import FAQ from "../components/FAQ";
 
 function Home() {
   return <>
-    <SEO title="SeeFuture Tech Hub | Digital Products, Software & AI" description="SeeFuture Tech Hub builds modern websites, mobile applications, business software, AI solutions, cybersecurity systems and practical technology training." keywords="SeeFuture Tech Hub, web development, mobile apps, software, AI, cybersecurity, Kaduna Nigeria" />
+    <SEO title="SeeFuture Tech Hub | Digital Products, Software & AI" description="SeeFuture Tech Hub delivers digital products, data solutions, SPSS statistical analysis, web and mobile applications, AI, cybersecurity and practical technology services in Nigeria." keywords="SeeFuture Tech Hub, data analysis, SPSS analysis, data solutions, web development Nigeria, mobile apps, AI, cybersecurity, Kaduna Nigeria" />
     <Hero />
     <TrustedSection />
     <Services />
+    <DataAnalyticsSection />
     <WhyChooseUs />
 
     <section className="sf-section bg-slate-950 text-white">

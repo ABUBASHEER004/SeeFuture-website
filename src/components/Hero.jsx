@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaCheckCircle, FaCode, FaShieldAlt, FaBrain, FaStar } from "react-icons/fa";
+import { FaArrowRight, FaCheckCircle, FaCode, FaShieldAlt, FaBrain, FaChartBar, FaStar } from "react-icons/fa";
 
 const capabilities = [
-  [FaCode, "Software & Web"], [FaShieldAlt, "Cybersecurity"], [FaBrain, "AI & Automation"],
+  [FaCode, "Software & Web"], [FaShieldAlt, "Cybersecurity"], [FaBrain, "AI & Automation"], [FaChartBar, "Data & SPSS"],
 ];
 
 function Hero() {
@@ -20,13 +20,13 @@ function Hero() {
             We turn ambitious ideas into <span className="sf-gradient-text">digital products.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
-            SeeFuture Tech Hub designs and builds modern websites, mobile apps, business software, AI solutions and secure digital experiences that help organizations move forward.
+            SeeFuture Tech Hub combines software engineering, data analytics and digital innovation to help businesses, NGOs, researchers and organizations turn ideas and information into practical results.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link to="/contact" className="sf-btn sf-btn-primary">Start your project <FaArrowRight size={13} /></Link>
             <Link to="/portfolio" className="sf-btn border border-white/20 bg-white/5 text-white hover:bg-white/10">Explore our work</Link>
           </div>
-          <div className="mt-12 grid max-w-2xl gap-3 sm:grid-cols-3">
+          <div className="mt-12 grid max-w-2xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map(([Icon, text]) => <div key={text} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[.04] p-4"><Icon className="text-cyan-300" /><span className="text-sm font-semibold text-slate-200">{text}</span></div>)}
           </div>
         </motion.div>
@@ -40,9 +40,9 @@ function Hero() {
               <div className="absolute h-48 w-48 rounded-full border border-blue-400/20" />
               <img src="/logo.png" alt="SeeFuture Tech Hub" className="sf-float relative z-10 w-48 drop-shadow-[0_25px_50px_rgba(0,0,0,.45)]" />
               <div className="absolute left-3 top-8 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-md"><span className="block text-xs text-slate-300">Focus</span><strong className="text-sm">Real business value</strong></div>
-              <div className="absolute bottom-5 right-2 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-md"><span className="block text-xs text-slate-300">Approach</span><strong className="text-sm">Secure & scalable</strong></div>
+              <div className="absolute bottom-5 right-2 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-md"><span className="block text-xs text-slate-300">Approach</span><strong className="text-sm">Data-driven & scalable</strong></div>
             </div>
-            <div className="grid grid-cols-3 gap-2 border-t border-white/10 pt-5 text-center"><div><strong className="block text-xl">Web</strong><span className="text-xs text-slate-400">Platforms</span></div><div><strong className="block text-xl">Apps</strong><span className="text-xs text-slate-400">Mobile</span></div><div><strong className="block text-xl">AI</strong><span className="text-xs text-slate-400">Automation</span></div></div>
+            <div className="grid grid-cols-3 gap-2 border-t border-white/10 pt-5 text-center"><div><strong className="block text-xl">Web</strong><span className="text-xs text-slate-400">Platforms</span></div><div><strong className="block text-xl">Apps</strong><span className="text-xs text-slate-400">Mobile</span></div><div><strong className="block text-xl">Data</strong><span className="text-xs text-slate-400">Analytics</span></div></div>
           </div>
         </motion.div>
       </div>

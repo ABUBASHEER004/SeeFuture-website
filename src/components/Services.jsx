@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaGlobe, FaMobileAlt, FaShieldAlt, FaRobot, FaCloud, FaChalkboardTeacher, FaArrowRight } from "react-icons/fa";
+import { FaGlobe, FaMobileAlt, FaShieldAlt, FaRobot, FaCloud, FaChalkboardTeacher, FaChartBar, FaArrowRight } from "react-icons/fa";
 
 const services = [
   [FaGlobe, "Website Development", "Fast, responsive websites that make your brand credible and easier to discover online."],
@@ -8,6 +8,7 @@ const services = [
   [FaRobot, "AI & Automation", "Useful AI systems that automate repetitive work, improve decisions and create better experiences."],
   [FaCloud, "Cloud Solutions", "Deployment, hosting and scalable infrastructure for dependable digital products."],
   [FaChalkboardTeacher, "Tech Training", "Hands-on learning in software development, Flutter, cybersecurity, AI and modern digital skills."],
+  [FaChartBar, "Data Analytics & SPSS", "Professional data preparation, statistical analysis, interpretation and visualization for NGOs, students, researchers and organizations."],
 ];
 
 function Services() {
