@@ -1,1 +1,7 @@
 main{min-height:70vh}section{scroll-margin-top:88px}footer a:hover{color:#67e8f9}input,textarea,select{color:#0f172a}input:focus,textarea:focus,select:focus{outline:none}@keyframes sf-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}.sf-float{animation:sf-float 5s ease-in-out infinite}@media(prefers-reduced-motion:reduce){.sf-float{animation:none}}
+
+/* Instant-feeling client-side route changes */
+.sf-page-transition{animation:sf-page-enter .22s ease both;}
+@keyframes sf-page-enter{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+#main-content:focus{outline:none}
+@media(prefers-reduced-motion:reduce){.sf-page-transition{animation:none}}
