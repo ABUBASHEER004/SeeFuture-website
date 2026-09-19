@@ -1,6 +1,90 @@
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaGlobe, FaMobileAlt, FaRobot, FaShieldAlt } from "react-icons/fa";
+import { FaArrowRight, FaBook, FaFutbol, FaHeartbeat, FaStore } from "react-icons/fa";
 
-const projects=[[FaGlobe,"Business websites","Web","Responsive experiences that turn visitors into enquiries."],[FaMobileAlt,"Mobile products","Mobile","Cross-platform apps designed around simple user journeys."],[FaRobot,"AI workflows","AI","Automation concepts that connect people, data and intelligent tools."],[FaShieldAlt,"Security improvement","Security","Practical reviews and controls that reduce digital risk."]];
-function PortfolioPreview(){return <section className="sf-section bg-slate-50"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div className="max-w-3xl"><span className="sf-eyebrow">Selected capabilities</span><h2 className="mt-5 text-3xl font-black md:text-5xl">A glimpse of what we build.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Explore representative solution patterns. We keep the portfolio honest and add client-approved case studies as projects are completed.</p></div><Link to="/portfolio" className="sf-btn sf-btn-light">View portfolio <FaArrowRight size={11}/></Link></div><div className="mt-12 grid gap-5 md:grid-cols-2">{projects.map(([Icon,title,tag,text])=><article className="sf-card group p-7" key={title}><div className="flex items-center justify-between"><div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-600"><Icon/></div><span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-500">{tag}</span></div><h3 className="mt-7 text-xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p><Link to="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-blue-600">Discuss a project <FaArrowRight size={11} className="transition group-hover:translate-x-1"/></Link></article>)}</div></div></section>}
+const projects = [
+  {
+    Icon: FaStore,
+    title: "Gida Services",
+    category: "Local services",
+    text: "A simple marketplace connecting people with trusted local service providers.",
+    image: "/projects/gida-services.jpg",
+  },
+  {
+    Icon: FaBook,
+    title: "Hikimar Yara",
+    category: "Education",
+    text: "Hausa children's stories and audio learning designed around culture and family.",
+    image: "/projects/hikimar-yara.jpg",
+  },
+  {
+    Icon: FaFutbol,
+    title: "Football Academy Management",
+    category: "Sports operations",
+    text: "Player, coach, training, attendance, fixtures, finance and administration in one platform.",
+    image: "/projects/football-academy.jpg",
+  },
+  {
+    Icon: FaHeartbeat,
+    title: "Hospital Response App",
+    category: "Healthcare",
+    text: "Digital coordination for patients, responders, clinical teams and hospital readiness.",
+    image: "/projects/hospital-response.jpg",
+  },
+];
+
+function PortfolioPreview() {
+  return (
+    <section className="sf-section bg-slate-950 text-white">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div className="max-w-3xl">
+            <span className="sf-eyebrow bg-white/10 text-cyan-300">Featured projects</span>
+            <h2 className="mt-5 text-3xl font-black tracking-tight md:text-5xl">
+              Products built around real needs.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              Explore a few of the digital products SeeFuture Tech Hub has designed
+              and developed across services, education, sports and healthcare.
+            </p>
+          </div>
+          <Link to="/portfolio" className="sf-btn sf-btn-light shrink-0">
+            View all projects <FaArrowRight size={11} />
+          </Link>
+        </div>
+
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {projects.map(({ Icon, title, category, text, image }) => (
+            <Link
+              to="/portfolio"
+              className="sf-feature-project group overflow-hidden rounded-[26px] border border-white/10 bg-white/[.06]"
+              key={title}
+            >
+              <div className="relative h-64 overflow-hidden bg-slate-900">
+                <img
+                  src={image}
+                  alt={`${title} screenshot`}
+                  loading="lazy"
+                  className="h-full w-full object-contain p-4 transition duration-500 group-hover:scale-[1.04]"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950 to-transparent" />
+                <span className="absolute bottom-4 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-cyan-300 backdrop-blur">
+                  <Icon />
+                </span>
+              </div>
+              <div className="p-6">
+                <span className="text-[10px] font-black uppercase tracking-[.18em] text-cyan-300">{category}</span>
+                <h3 className="mt-3 text-lg font-black">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-400">{text}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-white">
+                  Explore project <FaArrowRight size={10} className="transition group-hover:translate-x-1" />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default PortfolioPreview;

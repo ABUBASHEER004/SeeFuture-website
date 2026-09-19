@@ -1,25 +1,234 @@
 import SEO from "../components/SEO";
 import PageHero from "../components/PageHero";
 import { Link } from "react-router-dom";
-import { FaGlobe, FaMobileAlt, FaRobot, FaShieldAlt, FaCloud, FaDatabase, FaArrowRight } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaBook,
+  FaCheckCircle,
+  FaFutbol,
+  FaHeartbeat,
+  FaStore,
+} from "react-icons/fa";
 
-const showcases = [
-  { Icon: FaGlobe, title: "Business web platforms", category: "Web", description: "Responsive public-facing websites and business portals with clear information architecture, strong calls to action and mobile-first UX.", tech: ["React", "Vite", "Tailwind CSS"], image: "/blog/web-development.jpg" },
-  { Icon: FaMobileAlt, title: "Mobile service products", category: "Mobile", description: "Cross-platform application experiences designed around simple flows, reliable data and practical day-to-day use.", tech: ["Flutter", "Dart", "Firebase"], image: "/blog/flutter.jpg" },
-  { Icon: FaRobot, title: "AI-assisted workflows", category: "AI", description: "Automation concepts that connect people, data and intelligent tools to reduce repetitive work and improve response time.", tech: ["AI", "Automation", "APIs"], image: "/blog/ai.jpg" },
-  { Icon: FaShieldAlt, title: "Security improvement", category: "Security", description: "Practical cybersecurity engagements focused on identifying exposure, improving controls and building safer digital habits.", tech: ["Risk review", "Security", "Awareness"], image: "/blog/cybersecurity.jpg" },
-  { Icon: FaCloud, title: "Cloud deployment", category: "Cloud", description: "Deployment and hosting patterns that make digital products easier to operate, back up and scale.", tech: ["Hosting", "CI/CD", "Backups"], image: "/hero.png" },
-  { Icon: FaDatabase, title: "Business data systems", category: "Software", description: "Structured systems for managing records, workflows and operational information with room for future integrations.", tech: ["Databases", "APIs", "Dashboards"], image: "/logo.png" },
+const projects = [
+  {
+    number: "01",
+    Icon: FaStore,
+    category: "Local services marketplace",
+    title: "Gida Services",
+    description:
+      "A practical local-services marketplace that helps people discover trusted professionals and service providers, request a service, communicate directly and get things done without unnecessary friction.",
+    bullets: [
+      "Service discovery and provider profiles",
+      "Direct customer–provider communication",
+      "Simple booking and request flows",
+      "Designed for everyday local services",
+    ],
+    tech: ["Flutter", "Dart", "Firebase"],
+    image: "/projects/gida-services.jpg",
+    tone: "from-emerald-500/20 via-cyan-500/10 to-transparent",
+  },
+  {
+    number: "02",
+    Icon: FaBook,
+    category: "Children's education & storytelling",
+    title: "Hikimar Yara",
+    description:
+      "A Hausa children's storytelling and learning experience built around culturally relevant stories, friendly visuals and audio storytelling for young learners and families.",
+    bullets: [
+      "Hausa stories organized by categories",
+      "Tarbiyya, Addini, Dabbobi and other themes",
+      "Audio storytelling for a richer experience",
+      "Child-friendly visual presentation",
+    ],
+    tech: ["Flutter", "Dart", "Audio"],
+    image: "/projects/hikimar-yara.jpg",
+    tone: "from-lime-500/20 via-amber-500/10 to-transparent",
+  },
+  {
+    number: "03",
+    Icon: FaFutbol,
+    category: "Sports operations platform",
+    title: "Football Academy Management System",
+    description:
+      "A connected academy-management platform that brings player development, coaching operations and administration into one digital workflow for a modern football academy.",
+    bullets: [
+      "Player and coach management",
+      "Teams, training and attendance workflows",
+      "Fixtures and academy activity tracking",
+      "Finance, authentication and administration",
+    ],
+    tech: ["Flutter", "Dart", "Firebase"],
+    image: "/projects/football-academy.jpg",
+    tone: "from-emerald-500/20 via-sky-500/10 to-transparent",
+  },
+  {
+    number: "04",
+    Icon: FaHeartbeat,
+    category: "Healthcare & emergency coordination",
+    title: "Hospital Response App",
+    description:
+      "A healthcare and emergency-response application designed to support faster communication and coordination between patients, responders and healthcare facilities.",
+    bullets: [
+      "Live clinical-team visibility",
+      "Emergency board and alert workflows",
+      "Patient requests and communication",
+      "Hospital readiness and response coordination",
+    ],
+    tech: ["Flutter", "Dart", "Firebase"],
+    image: "/projects/hospital-response.jpg",
+    tone: "from-rose-500/20 via-cyan-500/10 to-transparent",
+  },
 ];
 
-function Portfolio() {
-  return <>
-    <SEO title="Portfolio | SeeFuture Tech Hub" description="Explore representative SeeFuture Tech Hub solution showcases across web, mobile, AI, cybersecurity, cloud and business software." keywords="SeeFuture Tech Hub portfolio, web projects, mobile apps, AI, cybersecurity, software" />
-    <PageHero eyebrow="Selected solution showcases" title="Work that shows what we can build." description="A visual overview of the types of digital products and technology engagements SeeFuture Tech Hub can deliver. Client-approved screenshots can be added here as projects go live." action="Discuss your project" />
+function ProjectVisual({ project }) {
+  const { Icon, image, title, number, tone } = project;
 
-    <section className="sf-section bg-slate-50"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="mb-12 max-w-3xl"><span className="sf-eyebrow">Portfolio</span><h2 className="mt-5 text-3xl font-black md:text-5xl">Representative solution patterns.</h2><p className="mt-5 leading-8 text-slate-600">We avoid inventing client results or screenshots. These showcases communicate our capabilities and can be replaced with approved project case studies as they become available.</p></div><div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">{showcases.map(({Icon,title,category,description,tech,image})=><article key={title} className="sf-card overflow-hidden"><div className="relative h-52 overflow-hidden bg-slate-950"><img src={image} alt="" className="h-full w-full object-cover opacity-55"/><div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"/><div className="absolute bottom-4 left-5 flex items-center gap-3 text-white"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 backdrop-blur"><Icon/></span><span className="text-xs font-black uppercase tracking-[.18em]">{category}</span></div></div><div className="p-7"><h3 className="text-xl font-black">{title}</h3><p className="mt-3 leading-7 text-slate-600">{description}</p><div className="mt-5 flex flex-wrap gap-2">{tech.map(t=><span key={t} className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">{t}</span>)}</div><Link to="/contact" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-blue-600">Build something similar <FaArrowRight size={11}/></Link></div></article>)}</div></div></section>
-
-    <section className="sf-section bg-white"><div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="grid gap-8 lg:grid-cols-[1.2fr_.8fr] lg:items-center"><div><span className="sf-eyebrow">Case-study ready</span><h2 className="mt-5 text-3xl font-black md:text-5xl">Turn your project into the next showcase.</h2><p className="mt-5 max-w-2xl leading-8 text-slate-600">For completed client work, we can present the challenge, solution, technology stack, screenshots and measurable outcomes in a clean case-study format.</p></div><div className="rounded-3xl bg-slate-950 p-8 text-white"><p className="text-sm font-bold text-cyan-300">CASE STUDY FORMAT</p><div className="mt-6 grid gap-4 text-sm">{["Challenge", "Solution", "Technology", "Screenshots", "Outcome"].map(x=><div key={x} className="flex items-center gap-3"><span className="h-2 w-2 rounded-full bg-cyan-300"/>{x}</div>)}</div></div></div></div></section>
-  </>;
+  return (
+    <div className={`sf-project-visual bg-gradient-to-br ${tone}`}>
+      <div className="sf-project-glow" />
+      <div className="sf-project-device">
+        <div className="sf-project-device-bar">
+          <span />
+          <span />
+          <span />
+        </div>
+        <img src={image} alt={`${title} app screenshot`} loading="lazy" />
+      </div>
+      <div className="sf-project-badge">
+        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-cyan-300">
+          <Icon />
+        </span>
+        <span>
+          <span className="block text-[10px] font-black uppercase tracking-[.18em] text-slate-400">
+            Featured project
+          </span>
+          <span className="mt-1 block text-sm font-extrabold text-white">
+            Project {number}
+          </span>
+        </span>
+      </div>
+    </div>
+  );
 }
+
+function Portfolio() {
+  return (
+    <>
+      <SEO
+        title="Featured Projects | SeeFuture Tech Hub"
+        description="Explore featured SeeFuture Tech Hub digital products: Gida Services, Hikimar Yara, Football Academy Management System and Hospital Response App."
+        keywords="SeeFuture Tech Hub portfolio, Gida Services, Hikimar Yara, football academy management, hospital response app, Flutter Nigeria"
+      />
+
+      <PageHero
+        eyebrow="Featured projects"
+        title="Real products. Practical technology. Designed for people."
+        description="A closer look at four digital products built across local services, education, sports operations and healthcare response."
+        action="Start a project"
+      />
+
+      <section className="sf-section bg-white">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="sf-eyebrow">Portfolio / Case studies</span>
+            <h2 className="mt-5 text-3xl font-black tracking-tight md:text-5xl">
+              Four products. Four real-world problems.
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              SeeFuture Tech Hub builds digital experiences around the way people
+              actually work, learn, communicate and access services.
+            </p>
+          </div>
+
+          <div className="mt-16 space-y-10 lg:space-y-14">
+            {projects.map((project, index) => {
+              const { Icon, number, category, title, description, bullets, tech } = project;
+              const reversed = index % 2 === 1;
+
+              return (
+                <article
+                  key={title}
+                  className={`sf-project-card ${reversed ? "lg:flex-row-reverse" : ""}`}
+                >
+                  <ProjectVisual project={project} />
+
+                  <div className="flex flex-1 flex-col justify-center p-7 sm:p-9 lg:p-12">
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="sf-eyebrow">
+                        <Icon /> {category}
+                      </span>
+                      <span className="text-5xl font-black tracking-tighter text-slate-100 sm:text-6xl">
+                        {number}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-6 text-3xl font-black tracking-tight text-slate-950 md:text-4xl">
+                      {title}
+                    </h3>
+                    <p className="mt-4 max-w-2xl leading-8 text-slate-600">
+                      {description}
+                    </p>
+
+                    <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                      {bullets.map((bullet) => (
+                        <div key={bullet} className="flex items-start gap-3 text-sm font-semibold text-slate-700">
+                          <FaCheckCircle className="mt-0.5 shrink-0 text-emerald-500" />
+                          <span>{bullet}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-8 flex flex-wrap items-center gap-2">
+                      {tech.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs font-extrabold text-slate-600"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="sf-section bg-slate-950 text-white">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
+            <div>
+              <span className="sf-eyebrow bg-white/10 text-cyan-300">Your product could be next</span>
+              <h2 className="mt-5 text-3xl font-black tracking-tight md:text-5xl">
+                From idea to a polished digital product.
+              </h2>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+                Whether you need a marketplace, mobile app, operational platform or
+                a purpose-built healthcare solution, we can help turn the workflow
+                into a clear, usable product.
+              </p>
+            </div>
+            <div className="rounded-[28px] border border-white/10 bg-white/[.06] p-7 backdrop-blur sm:p-8">
+              <div className="grid gap-4 sm:grid-cols-2">
+                {["Product strategy", "UI/UX design", "Flutter development", "Firebase & cloud", "Data & analytics", "Deployment support"].map((item) => (
+                  <div key={item} className="flex items-center gap-3 text-sm font-bold text-slate-200">
+                    <FaCheckCircle className="shrink-0 text-cyan-300" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <Link to="/contact" className="sf-btn sf-btn-primary mt-8 w-full sm:w-auto">
+                Discuss your project <FaArrowRight size={12} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
 export default Portfolio;
